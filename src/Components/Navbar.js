@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const Navbar = () => {
-  const [menuItems, ] = useState([
+  const [menuItems,] = useState([
     'Home',
     'Electronics',
     'Books',
@@ -40,6 +40,7 @@ const Navbar = () => {
     }
   };
 
+
   useEffect(() => {
     updateMenu();
     window.addEventListener('resize', updateMenu);
@@ -47,7 +48,8 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('resize', updateMenu);
     };
-  }, [menuItems]);
+  }, [menuItems, updateMenu]); // Include updateMenu in the dependency array
+
 
   const handleMenuItemClick = (menuItem) => {
     // Handle the click event for menu items (if needed)

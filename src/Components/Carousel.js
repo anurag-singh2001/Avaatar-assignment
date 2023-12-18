@@ -7,10 +7,10 @@ import './style.css';
 const Carousel = ({ slides }) => {
     const [current, setCurrent] = useState(0);
     const length = slides.length;
-
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent((prev) => (prev === length - 1 ? 0 : prev + 1));
-    };
+    }, [length, setCurrent]);
+
 
     const prevSlide = () => {
         setCurrent((prev) => (prev === 0 ? length - 1 : prev - 1));
@@ -22,7 +22,7 @@ const Carousel = ({ slides }) => {
         }, 3000);
 
         return () => clearInterval(intervalId);
-    }, [current, length,nextSlide]);
+    }, [current, length, nextSlide]);
 
     if (!Array.isArray(slides) || slides.length === 0) {
         return null;
@@ -35,9 +35,8 @@ const Carousel = ({ slides }) => {
                     {slides.map((slide, index) => (
                         <div
                             key={index}
-                            className={`carousel-card ${
-                                index === current ? "opacity-100 scale-108" : "opacity-30"
-                            }`}
+                            className={`carousel-card ${index === current ? "opacity-100 scale-108" : "opacity-30"
+                                }`}
                             style={{ transform: `translateX(${100 * (index - current)}%)` }}
                         >
                             <div className="carousel-image-container">
@@ -63,9 +62,8 @@ const Carousel = ({ slides }) => {
                 {Array.from({ length: slides.length }).map((_, index) => (
                     <div
                         key={index}
-                        className={`carousel-indicator ${
-                            current === index ? "active" : ""
-                        }`}
+                        className={`carousel-indicator ${current === index ? "active" : ""
+                            }`}
                         onClick={() => setCurrent(index)}
                     />
                 ))}
