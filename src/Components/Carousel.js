@@ -1,6 +1,6 @@
 // Carousel.js
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useCallback } from 'react';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import './style.css';
 
