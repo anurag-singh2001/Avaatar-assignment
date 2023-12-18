@@ -1,0 +1,135 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 70px; /* Add gap between items */
+  }
+  
+  .visible-items div {
+    cursor: pointer;
+  }
+  
+  .more-items {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .hidden-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    flex-direction: column; /* Display items in a column */
+  }
+  
+  .more-items:hover .hidden-items {
+    display: flex;
+  }
+  
+  .hidden-items div {
+    cursor: pointer;
+    margin-bottom: 8px; /* Add margin between items in the "More" section */
+  }
+  
+  .categories {
+    margin-top: 10px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add gap between items */
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  
+  /* Carousel.css */
+
+/* Custom Carousel.css */
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-card {
+    min-width: 300px;
+    margin: 0 10px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .carousel-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  /* Custom styles for navigation arrows and indicators */
+  
+  .carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .carousel-arrow {
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: #ccc;
+  }
+  
+  .carousel-indicator.active {
+    background-color: #3498db;
+  }
+  
