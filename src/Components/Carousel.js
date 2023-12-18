@@ -22,7 +22,7 @@ const Carousel = ({ slides }) => {
         }, 3000);
 
         return () => clearInterval(intervalId);
-    }, [current, length]);
+    }, [current, length,nextSlide]);
 
     if (!Array.isArray(slides) || slides.length === 0) {
         return null;
