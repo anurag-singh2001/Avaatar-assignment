@@ -49,11 +49,20 @@ const Navbar = () => {
     };
   }, [menuItems]);
 
+  const handleMenuItemClick = (menuItem) => {
+    // Handle the click event for menu items (if needed)
+    console.log(`Clicked on: ${menuItem}`);
+  };
+
   return (
     <div className="navbar">
       <div className="menu">
         {visibleItems.map((item, index) => (
-          <div className="visible-items" key={index}>
+          <div
+            className="visible-items"
+            key={index}
+            onClick={() => handleMenuItemClick(item)}
+          >
             {item}
           </div>
         ))}
@@ -63,7 +72,12 @@ const Navbar = () => {
             {menuOpen && (
               <div className="hidden-items">
                 {hiddenItems.map((item, index) => (
-                  <div key={index}>{item}</div>
+                  <div
+                    key={index}
+                    onClick={() => handleMenuItemClick(item)}
+                  >
+                    {item}
+                  </div>
                 ))}
               </div>
             )}
