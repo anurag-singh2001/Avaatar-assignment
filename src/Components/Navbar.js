@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 
 const Navbar = () => {
-  const [menuItems, setMenuItems] = useState([
+  const [menuItems, ] = useState([
     'Home',
     'Electronics',
     'Books',
