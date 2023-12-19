@@ -1,6 +1,6 @@
 // Navbar.js
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import './style.css';
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
   const [hiddenItems, setHiddenItems] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const updateMenu = () => {
+  const updateMenu = useCallback(() => {
     const screenWidth = window.innerWidth;
     const itemWidth = 160;
 
@@ -38,7 +38,7 @@ const Navbar = () => {
       setVisibleItems([]);
       setHiddenItems(menuItems);
     }
-  };
+  }, [menuItems]);
 
 
   useEffect(() => {

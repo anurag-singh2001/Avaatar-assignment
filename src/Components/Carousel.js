@@ -42,7 +42,7 @@ const Carousel = ({ slides }) => {
                             <div className="carousel-image-container">
                                 <img
                                     src={slide.img}
-                                    alt={`carousel-image-${index}`}
+                                    alt={`Slide ${index + 1}`}
                                     className="carousel-img"
                                     onClick={() => setCurrent(index)}
                                 />
