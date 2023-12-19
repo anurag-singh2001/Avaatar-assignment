@@ -1,3 +1,50 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: 'Your desired font', sans-serif;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .h-screen {
+    height: 100vh;
+  }
+  
+  .pt-10 {
+    padding-top: 2.5rem;
+  }
+  
+  .space-y-32 {
+    margin-top: 2rem;
+  }
+  
+  .px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  /* Add more specific styles for your components */
+  

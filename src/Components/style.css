@@ -1,72 +1,88 @@
-/* Navbar.css */
-
+/* Navbar styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .menu {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 70px; /* Add gap between items */
-  }
-  
-  .visible-items div {
-    cursor: pointer;
-  }
-  
-  .more-items {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .hidden-items {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #333;
-    color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    flex-direction: column; /* Display items in a column */
-  }
-  
-  .more-items:hover .hidden-items {
-    display: flex;
-  }
-  
-  .hidden-items div {
-    cursor: pointer;
-    margin-bottom: 8px; /* Add margin between items in the "More" section */
-  }
-  
-  .categories {
-    margin-top: 10px;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Add gap between items */
-  }
-  
-  .search-bar input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    outline: none;
-  }
-  
-  
-  /* Carousel.css */
+  background-color: #333; 
+  color: #fff; 
+  padding: 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-/* Custom Carousel.css */
+/* Menu items styling */
+.menu {
+  display: flex;
+  gap: 40px;
+}
+
+.menu div {
+  cursor: pointer;
+  margin-right: 10px; 
+  transition: color 0.3s;
+}
+
+.menu div:hover {
+  color: #ddd; 
+}
+
+/* More section styling */
+.more-dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.more-dropdown > div {
+  margin-right: 10px; 
+}
+
+/* Hidden dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #555; 
+  min-width: 160px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Show dropdown content on hover */
+.more-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown items styling */
+.dropdown-content div {
+  color: #fff; 
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content div:hover {
+  background-color: #ddd; 
+  color: #333; 
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text-field-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 14px; 
+}
+
+.search-symbol {
+  cursor: pointer;
+}
+
+
+  /* Carousel.css */
 
 .carousel {
     display: flex;

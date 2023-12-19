@@ -1,10 +1,13 @@
 // Navbar.js
 
-import React, { useState, useEffect,useCallback } from 'react';
-import './style.css';
+import React, { useState, useEffect, useCallback } from 'react';
+//import { TextField, Search } from '@material-ui/core';
+import TextField from '@mui/material/TextField';
+import { AiOutlineSearch } from "react-icons/ai";
+import './style.css'; // Import your custom CSS file
 
 const Navbar = () => {
-  const [menuItems,] = useState([
+  const [menuItems] = useState([
     'Home',
     'Electronics',
     'Books',
@@ -25,7 +28,7 @@ const Navbar = () => {
 
   const updateMenu = useCallback(() => {
     const screenWidth = window.innerWidth;
-    const itemWidth = 160;
+    const itemWidth = 120;
 
     let visible, hidden;
     if (screenWidth > 480) {
@@ -40,7 +43,6 @@ const Navbar = () => {
     }
   }, [menuItems]);
 
-
   useEffect(() => {
     updateMenu();
     window.addEventListener('resize', updateMenu);
@@ -48,13 +50,13 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('resize', updateMenu);
     };
-  }, [menuItems, updateMenu]); // Include updateMenu in the dependency array
-
+  }, [menuItems, updateMenu]);
 
   const handleMenuItemClick = (menuItem) => {
-    // Handle the click event for menu items (if needed)
     console.log(`Clicked on: ${menuItem}`);
   };
+
+  
 
   return (
     <div className="navbar">
@@ -69,10 +71,12 @@ const Navbar = () => {
           </div>
         ))}
         {hiddenItems.length > 0 && (
-          <div className="more-items" onClick={() => setMenuOpen(!menuOpen)}>
-            <div>{visibleItems.length === 0 ? 'menu' : 'More'}</div>
+          <div className="more-dropdown">
+            <div onClick={() => setMenuOpen(!menuOpen)}>
+              {visibleItems.length === 0 ? 'menu' : 'More'}
+            </div>
             {menuOpen && (
-              <div className="hidden-items">
+              <div className="dropdown-content">
                 {hiddenItems.map((item, index) => (
                   <div
                     key={index}
@@ -87,8 +91,12 @@ const Navbar = () => {
         )}
       </div>
       <div className="search-bar">
-        <input type="text" placeholder="Search something" />
+        <AiOutlineSearch className="search-symbol" size={20}  />
+        <TextField  label="Search" variant="standard" className="text-field-input" InputProps={{ style: { color: 'white' } }}
+    InputLabelProps={{ style: { color: 'white' } }} />
       </div>
+
+
     </div>
   );
 };
